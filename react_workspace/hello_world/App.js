@@ -26,49 +26,26 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state={
+      data : "Some App State" 
+    }
+  }
+  render() {
   return (
-    <View style={{
-      flex:1,
-      alignItems:"center",
-      justifyContent:"center",
-    }}>
-      <Text style={{
-        fontSize:30
-      }}>Login</Text>
-      <Text style={{fontSize:15}}>Please signin to continue</Text>
-      <View style={{width:"80%",margin:20,}}></View>
-     <TextInput placeholder="Email" style={{
-        backgroundColor:"#eaeaea",
-        borderWidth: 0,
-        padding: 5,
-        width: 300,
-    
-      }} />
-      <TextInput placeholder="password" placeholderTextColor="000" style={{
-        backgroundColor:"#eaeaea",
-        borderWidth: 0,
-        padding: 5,
-        width: 300,
-        marginTop:20}}/>
+    <View>
 
-        <View style={{
-          marginTop:20,        
-  
-            width: 300,
-            marginTop:20
-          }}> 
-        <Button title="Login" color="#ff0000" onPress={() =>{
-          alert("Button Passed")
-        }}
-        
-        
-        />
-        </View>
-
+      <Text style={{fontSize:30}}>
+      {this.state.data}     
+      </Text>    
+      <Button title="Updste State" onPress={()=>{this.setState({data: "Some App Data Updated"})}}/>
 
     </View>
   );
+  }
 };
 
 
