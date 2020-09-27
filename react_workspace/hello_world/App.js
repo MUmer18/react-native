@@ -25,24 +25,29 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { red } from 'color-name';
+// import console = require('console');
 
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state={
-      data : "Some App State" 
-    }
+constructor(){
+  super();
+  this.state={
+    name: " "
   }
+}
   render() {
   return (
     <View>
 
-      <Text style={{fontSize:30}}>
-      {this.state.data}     
+      <Text style={{fontSize:30, alignSelf:"center"}}>
+      {this.state.name}
       </Text>    
-      <Button title="Updste State" onPress={()=>{this.setState({data: "Some App Data Updated"})}}/>
-
+      <TextInput placeholder="Name"
+      onChangeText={(e)=>{this.setState({name:e})}}
+       style={{height:100, fontSize:40, color:"red", backgroundColor: "#CD5C5C"}}>
+      </TextInput>
+      <Button title="submit" onPress={()=>{alert(this.state.name)}}/>
     </View>
   );
   }
