@@ -25,56 +25,23 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { red } from 'color-name';
-// import console = require('console');
-// import console = require('console');
+// import Home from './Home';
+// import { wrap } from 'module';
 
-
-class App extends React.Component {
-constructor(){
-  super();
-  this.state={
-    name: "",
-    password: " ",
-    address: " ",
-  }
-}
-submit(){
-  console.warn("all values", this.state)
-}
-  render() {
+const App: () => React$Node = () => {
+  
   return (
-    <View>
-      <TextInput placeholder="name" style={styles.textBox}
-      onChangeText = {(text) => {this.setState=({name: text})}}
-      >
+    
+    <View style={{flex:1, flexWrap:"wrap", alignItems:"flex-start",flexDirection:"column", justifyContent: "space-between"}}>  
+      <View style={{flex:1, width:120, height:120, backgroundColor: "blue",}}></View>
+      <View style={{flex:1, width:120, height:120, backgroundColor: "green"}}></View>
+      <View style={{flex:1, width:120, height:120, backgroundColor: "red"}}></View>
       
-      </TextInput>
-      <TextInput placeholder="password" style={styles.textBox} 
-      secureTextEntry = {true}
-      onChangeText={(text)=> {this.setState =({password:text})}}
-      >
-      </TextInput>
 
-      <TextInput placeholder="addresss" style={styles.textBox}
-      onChangeText={(text)=> {this.setState =({address : text})}}
-      >
-      </TextInput>
-     
-      <Button onPress={()=>{this.submit()}} title="Submit"/>     
     </View>
   );
-  }
 };
 
-const styles = StyleSheet.create({
-  textBox:{
-    borderColor: "skyblue",
-    borderWidth:1,
-    padding: 10,
-    marginHorizontal:20,
-    marginVertical:25
-  }
-})
 
-export default App;
+ export default App;
+
